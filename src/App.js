@@ -2,6 +2,15 @@
 import './App.css';
 import Homepage from './components/Homepage';
 import { useEffect } from 'react';
+import Produnct from './components/Produnct';
+import Navbar from './components/Navbar';
+import Footer from "./components/Footer"
+import Contact from './components/Contact';
+import {
+  
+  Route,
+  Routes
+} from "react-router-dom";
 function App() {
   const loadScript = (src) => {
     return new Promise((resolve) => {
@@ -22,7 +31,15 @@ useEffect(() => {
 });
 
   return (
-   <Homepage/>
+<>
+<Navbar/>
+   <Routes>
+   <Route exact  path="/" element={<Homepage/>}/>
+   <Route exact  path="/product" element={<Produnct/>}/>
+   <Route exact path="/contact" element={<Contact/>}/>
+ </Routes>
+ <Footer/>
+</>
   );
 }
 

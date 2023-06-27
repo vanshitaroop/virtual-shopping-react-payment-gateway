@@ -14,32 +14,34 @@ import p12 from "../images/p12.png"
 import client from "../images/client.jpg"
 import logo from "../images/logo.png"
 const Produnct = () => {
-    const testcall = async (txt, id) => {
-        try {
-            const response = await fetch(`http://localhost:3001/razorpay`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+    // const testcall = async (txt, id) => {
+    //     try {
+    //         const response = await fetch(`http://localhost:3001/razorpay`, {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
                
-            });
-            const data = await response.json();
-            console.log(data);
-            displayRazorPay(data)
+    //         });
+    //         const data = await response.json();
+    //         console.log(data);
+    //         displayRazorPay(data)
        
-        } catch (error) {
-            console.log('Some error occurred');
-        }
-    };
-    function displayRazorPay(data) {
+    //     } catch (error) {
+    //         console.log('Some error occurred');
+    //     }
+    // };
+    function displayRazorPay() {
         const options = {
             key: "rzp_test_VjTvES0gFi3uVE",
             currency: "INR",
-            amount: data.amount,
+            amount: 10*100,
             name: "Vanshita",
             description: "Orignal",
             image: logo,
-            order_id: data.id,
+            theme: {
+                color: "#9452A4", // Specify your desired hexadecimal color code here
+              },
             handler: function (response) {
                 alert(response.razorpay_payment_id);
                 alert(response.razorpay_order_id);
@@ -74,10 +76,9 @@ const Produnct = () => {
                                         <a href="" class="option1">
                                             Cotton Shirt Regular fit
                                         </a>
-                                        {/* <a href="" class="option2">
+                                     <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
-                                        </a> */}
-                                        <button className='btn btn-primary' onClick={testcall}>Buy noww</button>
+                                     </button>
                                     </div>
                                 </div>
                                 <div class="img-box">
@@ -100,9 +101,9 @@ const Produnct = () => {
                                         <a href="" class="option1">
                                             Cosmic Vibes Men's Shirt
                                         </a>
-                                        <a href="" class="option2">
+                                        <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
-                                        </a>
+                                     </button>
                                     </div>
                                 </div>
                                 <div class="img-box">
@@ -126,9 +127,9 @@ const Produnct = () => {
                                         <a href="" class="option1">
                                             Whispering Willow
                                         </a>
-                                        <a href="" class="option2">
+                                        <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
-                                        </a>
+                                     </button>
                                     </div>
                                 </div>
                                 <div class="img-box">
@@ -151,9 +152,9 @@ const Produnct = () => {
                                         <a href="" class="option1">
                                             Dazzling Aurora
                                         </a>
-                                        <a href="" class="option2">
+                                        <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
-                                        </a>
+                                     </button>
                                     </div>
                                 </div>
                                 <div class="img-box">
@@ -176,9 +177,9 @@ const Produnct = () => {
                                         <a href="" class="option1">
                                             Jewel Jive
                                         </a>
-                                        <a href="" class="option2">
+                                        <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
-                                        </a>
+                                     </button>
                                     </div>
                                 </div>
                                 <div class="img-box">
@@ -201,9 +202,9 @@ const Produnct = () => {
                                         <a href="" class="option1">
                                             Enchanting EleganceDress
                                         </a>
-                                        <a href="" class="option2">
+                                        <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
-                                        </a>
+                                     </button>
                                     </div>
                                 </div>
                                 <div class="img-box">
@@ -226,9 +227,9 @@ const Produnct = () => {
                                         <a href="" class="option1">
                                             Mystical Meadows
                                         </a>
-                                        <a href="" class="option2">
+                                        <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
-                                        </a>
+                                     </button>
                                     </div>
                                 </div>
                                 <div class="img-box">
@@ -251,9 +252,9 @@ const Produnct = () => {
                                         <a href="" class="option1">
                                             Men's Shirt
                                         </a>
-                                        <a href="" class="option2">
+                                        <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
-                                        </a>
+                                     </button>
                                     </div>
                                 </div>
                                 <div class="img-box">
@@ -276,9 +277,9 @@ const Produnct = () => {
                                         <a href="" class="option1">
                                             Men's Shirt
                                         </a>
-                                        <a href="" class="option2">
+                                        <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
-                                        </a>
+                                     </button>
                                     </div>
                                 </div>
                                 <div class="img-box">
@@ -301,9 +302,9 @@ const Produnct = () => {
                                         <a href="" class="option1">
                                             Men's Shirt
                                         </a>
-                                        <a href="" class="option2">
+                                        <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
-                                        </a>
+                                     </button>
                                     </div>
                                 </div>
                                 <div class="img-box">
@@ -326,9 +327,9 @@ const Produnct = () => {
                                         <a href="" class="option1">
                                             Men's Shirt
                                         </a>
-                                        <a href="" class="option2">
+                                        <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
-                                        </a>
+                                     </button>
                                     </div>
                                 </div>
                                 <div class="img-box">
@@ -351,9 +352,9 @@ const Produnct = () => {
                                         <a href="" class="option1">
                                             Fairy Tale Fantasy
                                         </a>
-                                        <a href="" class="option2">
+                                        <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
-                                        </a>
+                                     </button>
                                     </div>
                                 </div>
                                 <div class="img-box">
@@ -370,11 +371,7 @@ const Produnct = () => {
                             </div>
                         </div>
                     </div>
-                    <div class="btn-box">
-                        <a href="">
-                            View All products
-                        </a>
-                    </div>
+                
                 </div>
             </section>
         </>
