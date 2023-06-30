@@ -13,6 +13,10 @@ import p11 from "../images/p11.png"
 import p12 from "../images/p12.png"
 import client from "../images/client.jpg"
 import logo from "../images/logo.png"
+
+import { useDispatch } from 'react-redux'
+import Addtocart from './Addtocart'
+import { removecart,emptycart } from '../redux/action'
 const Produnct = () => {
     // const testcall = async (txt, id) => {
     //     try {
@@ -31,6 +35,7 @@ const Produnct = () => {
     //         console.log('Some error occurred');
     //     }
     // };
+    const dispatch = useDispatch();
     function displayRazorPay() {
         const options = {
             key: "rzp_test_VjTvES0gFi3uVE",
@@ -58,6 +63,10 @@ const Produnct = () => {
       
 
     }
+    const info = {
+        price:"100000",
+        product:"iphone"
+    }
     return (
         <>
 
@@ -68,14 +77,14 @@ const Produnct = () => {
                             Our <span>products</span>
                         </h2>
                     </div>
+                    <button className='btn btn-primary mx-2' onClick={()=>dispatch(emptycart(info))}>Empty cart</button>
+                    <button className='btn btn-primary' onClick={()=>dispatch(removecart(info))}>Remove from cart</button>
                     <div class="row">
                         <div class="col-sm-6 col-md-4 col-lg-4">
                             <div class="box">
                                 <div class="option_container">
                                     <div class="options">
-                                        <a href="" class="option1">
-                                            Cotton Shirt Regular fit
-                                        </a>
+                                      <Addtocart/>
                                      <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
                                      </button>
@@ -85,9 +94,7 @@ const Produnct = () => {
                                     <img src={p1} alt="" />
                                 </div>
                                 <div class="detail-box">
-                                    <h5>
-                                        Cotton Shirt Regular fit
-                                    </h5>
+                                <Addtocart/>
                                     <h6>
                                         999/-
                                     </h6>
@@ -98,9 +105,7 @@ const Produnct = () => {
                             <div class="box">
                                 <div class="option_container">
                                     <div class="options">
-                                        <a href="" class="option1">
-                                            Cosmic Vibes Men's Shirt
-                                        </a>
+                                    <Addtocart/>
                                         <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
                                      </button>
@@ -110,9 +115,7 @@ const Produnct = () => {
                                     <img src={p2} alt="" />
                                 </div>
                                 <div class="detail-box">
-                                    <h5>
-                                        Cosmic Vibes Men's Shirt
-                                    </h5>
+                                <Addtocart/>
 
                                     <h6>
                                         1199/-
@@ -124,9 +127,7 @@ const Produnct = () => {
                             <div class="box">
                                 <div class="option_container">
                                     <div class="options">
-                                        <a href="" class="option1">
-                                            Whispering Willow
-                                        </a>
+                                    <Addtocart/>
                                         <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
                                      </button>
@@ -149,9 +150,7 @@ const Produnct = () => {
                             <div class="box">
                                 <div class="option_container">
                                     <div class="options">
-                                        <a href="" class="option1">
-                                            Dazzling Aurora
-                                        </a>
+                                    <Addtocart/>
                                         <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
                                      </button>
@@ -161,9 +160,7 @@ const Produnct = () => {
                                     <img src={p4} alt="" />
                                 </div>
                                 <div class="detail-box">
-                                    <h5>
-                                        Dazzling Aurora
-                                    </h5>
+                                <Addtocart/>
                                     <h6>
                                         1999/-
                                     </h6>
@@ -174,9 +171,7 @@ const Produnct = () => {
                             <div class="box">
                                 <div class="option_container">
                                     <div class="options">
-                                        <a href="" class="option1">
-                                            Jewel Jive
-                                        </a>
+                                    <Addtocart/>
                                         <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
                                      </button>
@@ -186,9 +181,7 @@ const Produnct = () => {
                                     <img src={p5} alt="" />
                                 </div>
                                 <div class="detail-box">
-                                    <h5>
-                                        Jewel Jive
-                                    </h5>
+                                <Addtocart/>
                                     <h6>
                                         1499/-
                                     </h6>
@@ -199,9 +192,7 @@ const Produnct = () => {
                             <div class="box">
                                 <div class="option_container">
                                     <div class="options">
-                                        <a href="" class="option1">
-                                            Enchanting EleganceDress
-                                        </a>
+                                    <Addtocart/>
                                         <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
                                      </button>
@@ -211,9 +202,7 @@ const Produnct = () => {
                                     <img src={p6} alt="" />
                                 </div>
                                 <div class="detail-box">
-                                    <h5>
-                                        Enchanting Elegance Dress
-                                    </h5>
+                                <Addtocart/>
                                     <h6>
                                         2199/-
                                     </h6>
@@ -224,9 +213,7 @@ const Produnct = () => {
                             <div class="box">
                                 <div class="option_container">
                                     <div class="options">
-                                        <a href="" class="option1">
-                                            Mystical Meadows
-                                        </a>
+                                    <Addtocart/>
                                         <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
                                      </button>
@@ -236,9 +223,7 @@ const Produnct = () => {
                                     <img src={p7} alt="" />
                                 </div>
                                 <div class="detail-box">
-                                    <h5>
-                                        Mystical Meadows
-                                    </h5>
+                                <Addtocart/>
                                     <h6>
                                         1699/-
                                     </h6>
@@ -249,9 +234,7 @@ const Produnct = () => {
                             <div class="box">
                                 <div class="option_container">
                                     <div class="options">
-                                        <a href="" class="option1">
-                                            Men's Shirt
-                                        </a>
+                                    <Addtocart/>
                                         <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
                                      </button>
@@ -261,9 +244,7 @@ const Produnct = () => {
                                     <img src={p8} alt="" />
                                 </div>
                                 <div class="detail-box">
-                                    <h5>
-                                        Men's Shirt
-                                    </h5>
+                                <Addtocart/>
                                     <h6>
                                         999/-
                                     </h6>
@@ -274,9 +255,7 @@ const Produnct = () => {
                             <div class="box">
                                 <div class="option_container">
                                     <div class="options">
-                                        <a href="" class="option1">
-                                            Men's Shirt
-                                        </a>
+                                    <Addtocart/>
                                         <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
                                      </button>
@@ -286,9 +265,7 @@ const Produnct = () => {
                                     <img src={p9} alt="" />
                                 </div>
                                 <div class="detail-box">
-                                    <h5>
-                                        Men's Shirt
-                                    </h5>
+                                <Addtocart/>
                                     <h6>
                                         999/-
                                     </h6>
@@ -299,9 +276,7 @@ const Produnct = () => {
                             <div class="box">
                                 <div class="option_container">
                                     <div class="options">
-                                        <a href="" class="option1">
-                                            Men's Shirt
-                                        </a>
+                                    <Addtocart/>
                                         <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
                                      </button>
@@ -311,9 +286,7 @@ const Produnct = () => {
                                     <img src={p10} alt="" />
                                 </div>
                                 <div class="detail-box">
-                                    <h5>
-                                        Men's Shirt
-                                    </h5>
+                                <Addtocart/>
                                     <h6>
                                         1100/-
                                     </h6>
@@ -324,9 +297,7 @@ const Produnct = () => {
                             <div class="box">
                                 <div class="option_container">
                                     <div class="options">
-                                        <a href="" class="option1">
-                                            Men's Shirt
-                                        </a>
+                                    <Addtocart/>
                                         <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
                                      </button>
@@ -336,9 +307,7 @@ const Produnct = () => {
                                     <img src={p11} alt="" />
                                 </div>
                                 <div class="detail-box">
-                                    <h5>
-                                        Men's Shirt
-                                    </h5>
+                                <Addtocart/>
                                     <h6>
                                         999/-
                                     </h6>
@@ -349,9 +318,7 @@ const Produnct = () => {
                             <div class="box">
                                 <div class="option_container">
                                     <div class="options">
-                                        <a href="" class="option1">
-                                            Fairy Tale Fantasy
-                                        </a>
+                                    <Addtocart/>
                                         <button className='btn option2' onClick={displayRazorPay}>
                                             Buy Now
                                      </button>
@@ -361,9 +328,7 @@ const Produnct = () => {
                                     <img src={p12} alt="" />
                                 </div>
                                 <div class="detail-box">
-                                    <h5>
-                                        Fairy Tale Fantasy
-                                    </h5>
+                                <Addtocart/>
                                     <h6>
                                         2200/-
                                     </h6>
