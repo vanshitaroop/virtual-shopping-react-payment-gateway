@@ -13,7 +13,7 @@ import p11 from "../images/p11.png"
 import p12 from "../images/p12.png"
 import client from "../images/client.jpg"
 import logo from "../images/logo.png"
-
+import productList, { ProductList } from "../redux/productaction"
 import { useDispatch } from 'react-redux'
 import Addtocart from './Addtocart'
 import { removecart,emptycart } from '../redux/action'
@@ -77,8 +77,9 @@ const Produnct = () => {
                             Our <span>products</span>
                         </h2>
                     </div>
-                    <button className='btn btn-primary mx-2' onClick={()=>dispatch(emptycart(info))}>Empty cart</button>
+                    <button className='btn btn-primary mxnpm-2' onClick={()=>dispatch(emptycart(info))}>Empty cart</button>
                     <button className='btn btn-primary' onClick={()=>dispatch(removecart(info))}>Remove from cart</button>
+                    <button className='btn btn-primary' onClick={()=>dispatch(ProductList())}>Product List</button>
                     <div class="row">
                         <div class="col-sm-6 col-md-4 col-lg-4">
                             <div class="box">

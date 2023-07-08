@@ -1,0 +1,22 @@
+{
+    "product":[
+        {
+            "name":"product 1",
+            "color":"red",
+            "price":"10000",
+            "category":"clothing"
+        },
+        {
+            "name":"product 2",
+            "color":"green",
+            "price":"20000",
+            "category":"clothing"
+        },
+        {
+            "name":"product 3",
+            "color":"blue",
+            "price":"30000",
+            "category":"clothing"
+        }
+    ]
+}
